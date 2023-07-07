@@ -1,0 +1,17 @@
+server:
+  port: 8089
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecart_shopping?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: product-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

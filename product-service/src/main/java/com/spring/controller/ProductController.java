@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/")
+@RequestMapping("api/product")
 public class ProductController {
     private final ProductService service;
 
-    @PostMapping("create")
+    @PostMapping
     public ResponseEntity<?> createProduct(@RequestBody ProductDTO dto){
         return ResponseEntity.ok(service.createProduct(dto));
     }
 
-    @GetMapping("get-all")
+    @GetMapping
     public ResponseEntity<?> getAllProduct(){
         return ResponseEntity.ok(service.getAll());
     }

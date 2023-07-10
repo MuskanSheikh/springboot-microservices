@@ -45,7 +45,7 @@ public class OrderServiceImpl implements OrderService {
         List<String> skuCodes = item.stream().map(OrderLineItem::getSkuCode).toList();
 
         // call inventory service and place order if product is in stock
-        InventoryDTO[] result = webClientBuilder.build().get().uri("http://inventory-service/api/is-in-stock",
+        InventoryDTO[] result = webClientBuilder.build().get().uri("http://inventory-service/api/inventory",
                         uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
                 .retrieve()
                 .bodyToMono(InventoryDTO[].class)

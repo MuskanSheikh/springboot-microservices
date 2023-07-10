@@ -10,11 +10,11 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/")
+@RequestMapping("api/inventory")
 public class InventoryController {
     private final InventoryService inventoryService;
 
-    @GetMapping("is-in-stock")
+    @GetMapping
     public ResponseEntity<?> isInStock(@RequestParam List<String> skuCode){
         return ResponseEntity.ok(inventoryService.checkAvailability(skuCode));
     }

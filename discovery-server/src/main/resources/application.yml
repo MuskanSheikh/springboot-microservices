@@ -7,5 +7,11 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
 spring:
+  main:
+    allow-circular-references: true
   application:
     name: discovery-server
+client:
+  username: eureka
+  password: password
+
